@@ -33,3 +33,24 @@ def build_experiment(experiment_name, date, supervisor, subject) -> dict:
         "subject": subject
     }
     return experiment_dict
+
+if __name__ == "__main__":
+    experiment_name = input("Geben Sie den Namen des Experiments ein: ")
+    date = input("Geben Sie das Datum des Experiments ein: ")
+
+    supervisor_first_name = input("Geben Sie den Vornamen des Supervisors ein: ")
+    supervisor_last_name = input("Geben Sie den Nachnamen des Supervisors ein: ")
+    supervisor_sex = input("Geben Sie das Geschlecht des Supervisors ein (male/female): ")
+    supervisor_age = int(input("Geben Sie das Alter des Supervisors ein: "))
+    supervisor = build_person(supervisor_first_name, supervisor_last_name, supervisor_sex, supervisor_age)
+
+    subject_first_name = input("Geben Sie den Vornamen des Subjects ein: ")
+    subject_last_name = input("Geben Sie den Nachnamen des Subjects ein: ")
+    subject_sex = input("Geben Sie das Geschlecht des Subjects ein (male/female): ")
+    subject_age = int(input("Geben Sie das Alter des Subjects ein: "))
+    subject = build_person(subject_first_name, subject_last_name, subject_sex, subject_age)
+
+    experiment = build_experiment(experiment_name, date, supervisor, subject)
+
+    print("\nErstelltes Experiment-Dictionary:")
+    print(experiment)
